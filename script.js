@@ -37,6 +37,7 @@ fetchPostBtn.addEventListener('click', async () => {
 });
 
 //if you want to execute the same promise multiple times but with different ids
+// AT THE SAME TIME
 fetchPostsBtn.addEventListener('click', async () => {
   const startId = +startIdInput.value;
   const endId = +endIdInput.value;
@@ -49,6 +50,7 @@ fetchPostsBtn.addEventListener('click', async () => {
   //create an array with the ids needed
   const idRangeArr = getRange(startId, endId);
   console.time('async');
+
   //create an array of promises with those ids
   const postsPromiseArr = idRangeArr.map((id) => fetchPost({ id }));
 
@@ -61,6 +63,8 @@ fetchPostsBtn.addEventListener('click', async () => {
   console.timeEnd('async');
 });
 
+// if you want to execute the same promise multiple times but with different ids
+// ONE AFTER ANOTHER
 fetchPostsSyncBtn.addEventListener('click', async () => {
   const startId = +startIdSyncInput.value;
   const endId = +endIdSyncInput.value;
@@ -73,7 +77,7 @@ fetchPostsSyncBtn.addEventListener('click', async () => {
 
   //create an array with the ids needed
   const idRangeArr = getRange(startId, endId);
-  console.time('syncronously');
+  console.time('sync');
   //use await inside the for loop to synchonously call each promise
   for (const id of idRangeArr) {
     const post = await fetchPost({ id });
@@ -81,7 +85,5 @@ fetchPostsSyncBtn.addEventListener('click', async () => {
   }
 
   console.log({ postsArr });
-  console.timeEnd('syncronously');
+  console.timeEnd('sync');
 });
-
-// console.log(await fetchPosts({ idArr: getRange(4, 104) }));
