@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js" type="module" defer></script>
+  </head>
+  <body>
+    <h1>hello world</h1>
+    <p>check the console</p>
+    <button class="btn fetch" data-type="post">
+      Fetch first 3 posts concurrently
+    </button>
+
+    <div class="fetch-posts-wrapper">
+      <h2>so you want a bunch of posts?</h2>
+      <input
+        type="number"
+        class="id-range"
+        data-type="start-id"
+        placeholder="start ID"
+      />
+      <input
+        type="number"
+        class="id-range"
+        data-type="end-id"
+        placeholder="end ID"
+      />
+      <button class="btn fetch" data-type="post-range">
+        Fetch posts concurrently
+      </button>
+    </div>
+
+    <div class="fetch-posts-wrapper">
+      <h2>
+        you want to wait for each one to finish before starting the next?? ok..
+      </h2>
+      <input
+        type="number"
+        class="id-range"
+        data-type="start-id-sync"
+        placeholder="start ID"
+      />
+      <input
+        type="number"
+        class="id-range"
+        data-type="end-id-sync"
+        placeholder="end ID"
+      />
+      <button class="btn fetch" data-type="post-range-sync">Fetch posts</button>
+    </div>
+  </body>
+</html>
