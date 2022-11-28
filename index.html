@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <title>Async vs Sync</title>
     <script src="./script.js" type="module" defer></script>
   </head>
   <body>
@@ -14,7 +15,7 @@
       Fetch first 3 posts concurrently
     </button>
 
-    <div class="fetch-posts-wrapper">
+    <div class="fetch-posts-wrapper async">
       <h2>so you want a bunch of posts?</h2>
       <input
         type="number"
@@ -33,7 +34,7 @@
       </button>
     </div>
 
-    <div class="fetch-posts-wrapper">
+    <div class="fetch-posts-wrapper sync">
       <h2>
         you want to wait for each one to finish before starting the next?? ok..
       </h2>
